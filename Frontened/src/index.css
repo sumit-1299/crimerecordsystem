@@ -1,0 +1,272 @@
+/* 🌤️ MODERN DASHBOARD FINAL POLISH */
+
+:root {
+  --primary: #3b82f6;
+  --primary-light: #6366f1;
+  --danger: #ef4444;
+  --success: #22c55e;
+  --warning: #f59e0b;
+
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e5e7eb;
+}
+
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  color: var(--text);
+}
+
+/* ================= LAYOUT ================= */
+.layout {
+  display: flex;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  color: #60a5fa;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: flex;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.sidebar a:hover {
+  background: rgba(59,130,246,0.15);
+  color: #60a5fa;
+  transform: translateX(3px);
+}
+
+.sidebar .active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+}
+
+/* ================= MAIN ================= */
+.main {
+  margin-left: 240px;
+  padding: 25px;
+  width: calc(100% - 240px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+}
+/* ================= TOPBAR ================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+}
+
+.logout-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= GRID ================= */
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ================= FORM ================= */
+.fir-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.fir-form input,
+.fir-form select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.fir-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ================= BUTTONS ================= */
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.btn-blue { background: #3b82f6; color: white; }
+.btn-green { background: var(--success); color: white; }
+.btn-red { background: var(--danger); color: white; }
+
+/* ================= TABLE ================= */
+.fir-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fir-table th, .fir-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fir-table tr:hover {
+  background: #f8fafc;
+}
+
+/* ================= STATUS (FIXED) ================= */
+.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status.pending {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.status.in_progress {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status.closed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ================= PRIORITY ================= */
+.priority.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.priority.medium {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.priority.high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  display: flex;
+  gap: 10px;
+}
+
+.timeline span {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.timeline .created { background: #dcfce7; }
+.timeline .assigned { background: #dbeafe; }
+.timeline .progress { background: #fef9c3; }
+.timeline .closed { background: #fee2e2; }
+
+/* ================= FILTER ================= */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+}
